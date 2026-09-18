@@ -81,23 +81,12 @@ const MASTER_EDIT_ID =
 
 const PROJECT_DIR = __dirname;
 
-const PUBLIC_DIR =
-  path.join(
-    PROJECT_DIR,
-    "public"
-  );
+const PUBLIC_DIR = PROJECT_DIR;
 
-const DATA_DIR =
-  path.join(
-    PUBLIC_DIR,
-    "data"
-  );
-
-const DATA_FILE =
-  path.join(
-    DATA_DIR,
-    "places.json"
-);
+// Website files live in the project root.
+// Data is kept in ./data so GitHub Pages and Express use the same path.
+const DATA_DIR = path.join(PROJECT_DIR, "data");
+const DATA_FILE = path.join(DATA_DIR, "places.json");
 
 
 /* =========================================================

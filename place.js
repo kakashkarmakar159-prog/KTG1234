@@ -21,7 +21,7 @@ async function loadPlace() {
     try {
 
         const response = await fetch(
-            "./places.json",
+            "data/places.json",
             {
                 cache: "no-store"
             }
@@ -30,7 +30,7 @@ async function loadPlace() {
         if (!response.ok) {
 
             throw new Error(
-                "Could not load data/places.json"
+                "Could not load place data"
             );
 
         }

@@ -30,7 +30,7 @@
      CONFIG
      ========================================================= */
 
-  const DATA_URL = "./places.json";
+  const DATA_URL = "./data/places.json";
 
   // If your backend has a restaurant API, this can be used.
   // The script automatically falls back to places.json if API fails.
@@ -1362,7 +1362,7 @@ async function loadRestaurantPage() {
         // Load places.json
         // -------------------------------------------------
 
-        const response = await fetch("./places.json", {
+        const response = await fetch("data/places.json", {
             cache: "no-store"
         });
 

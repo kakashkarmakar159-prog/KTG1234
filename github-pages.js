@@ -5,7 +5,7 @@
 (function(){
   const nativeFetch = window.fetch.bind(window);
   const base = new URL('./', location.href).href;
-  const DATA_URL = new URL('./places.json', base).href;
+  const DATA_URL = new URL('data/places.json', base).href;
   const OVERRIDE_KEY = 'ktg_static_data_overrides_v1';
 
   function readOverrides(){ try{return JSON.parse(localStorage.getItem(OVERRIDE_KEY)||'{}')}catch{return {}} }
@@ -19,7 +19,7 @@
     return [];
   }
   async function getPlaces(){
-    const r = await nativeFetch(DATA_URL,{cache:'default'}); if(!r.ok) throw new Error('places.json could not be loaded');
+    const r = await nativeFetch(DATA_URL,{cache:'no-store'}); if(!r.ok) throw new Error('places.json could not be loaded');
     const places = await r.json(); const ov=readOverrides();
     if(!Array.isArray(places)) return places;
     for(const p of places){

@@ -706,7 +706,7 @@ const modal = document.getElementById("locationModal");
 let pendingPlace = null;
 
 async function loadPlaces(){
-  places = await fetch("./places.json").then(r=>r.json());
+  places = await fetch("data/places.json").then(r=>r.json());
   renderPlaces(places);
 }
 function renderPlaces(list){
