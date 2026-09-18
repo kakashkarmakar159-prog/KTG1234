@@ -1,0 +1,6 @@
+KTG data loading fix
+======================
+- Fixed the broken data path: client pages now load ./places.json, which is the actual data file in this project.
+- Minified places.json to reduce transfer size while keeping the same data.
+- Enabled normal browser caching for static data in the GitHub Pages compatibility layer.
+- Existing UI, pages, server-side data structure, and IDs are preserved.
